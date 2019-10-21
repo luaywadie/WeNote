@@ -1,9 +1,9 @@
 # WeNote™
-## Installing Dependenceis
+## Installing Dependencies
 1) Use git clone or download a zip version of the application.
 - Extract if ZIP file
-2) Using a terminal, navigate to server and install npm dependencys by typing `npm install`.
-3) Using another terminal window, navigate to client and install npm dependencys by typing `npm install`.
+2) Using a terminal, navigate to server and install npm dependencies by typing `npm install`.
+3) Using another terminal window, navigate to client and install npm dependencies by typing `npm install`.
 
 ## Running the server and client
 1) While inside the server folder, run `node server` to start the node server. It should say Listening to port: 3000.
