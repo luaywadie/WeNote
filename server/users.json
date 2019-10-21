@@ -2,18 +2,18 @@
   {
     "username": "Luay",
     "password": "123",
-    "notes" : [
+    "notes": [
       {
-        "title" : "Test",
-        "date" : "10/4/2019",
-        "creator" : "self",
-        "src" : "Luay#Test.txt"
+        "title": "Test",
+        "date": "10/4/2019",
+        "creator": "self",
+        "src": "Luay#Test.txt"
       },
       {
-        "title" : "Science",
-        "date" : "11/5/2019",
-        "creator" : "Michael",
-        "src" : "Michael#Science.txt"
+        "title": "Science",
+        "date": "11/5/2019",
+        "creator": "Michael",
+        "src": "Michael#Science.txt"
       }
     ]
   }

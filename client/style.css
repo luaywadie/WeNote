@@ -84,7 +84,7 @@ html {
     padding: 12px;
     margin: 15px auto;
     width: 70%;
-    color: #444;
+    color: #ff4949;
     text-shadow: 1px 1px #3334;
     display: block;
     border:1px solid #ff003971;
@@ -315,10 +315,11 @@ html {
     background-color:#ed143d80;
   }
 
-  #notes_phase textarea {
+  #notes_phase #note_area {
     font-size:16px;
-    font-style: italic;
-    margin-left:20px; 
+    margin-left:20px;
+    width:75%;
+    height:500px;
   }
 
 

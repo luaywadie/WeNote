@@ -87,9 +87,25 @@
   // Register User
   $("#register_confirm_submit").on("click",function(e){
     e.preventDefault();
-    socket.emit("user_register", $("#register_form #username_in").val(), $("#register_form #password_in").val())
-    return false;
+    if ($("#register_form .form_input #username_in").val() != "" && $("#register_form .form_input #password_in").val() != "") {
+      socket.emit("user_register", $("#register_form #username_in").val(), $("#register_form #password_in").val())
+      return false;
+    } else {
+      $(".message_alert.mar").fadeIn(2000).delay(1000).fadeOut(500).text("Complete All Fields");
+    }
   });
+
+  socket.on("user_register_response", function(response, eType){
+    if (response == "error") {
+      $(".message_alert.mar").fadeIn(2000).delay(1000).fadeOut(500).text(eType);
+    } else if (response == "ok") {
+      // Switch to Login Page
+      $.when($("#register_form").fadeOut(500))
+      .then(function(){
+        $("#login_form").fadeIn(500);
+      });
+    }
+  })
 
   // Load Note Page
   $("#notes_phase").load("note_edit.html",function(){
@@ -101,8 +117,9 @@
         $("#profile_phase").fadeIn(500);
       });
     })
+    // Update Notes
     $("#note_area").on("input propertychange", function(){
-      socket.emit("update_note", user, current_note,$(this).val())
+      socket.emit("update_note", user, current_note,$(this).html())
     })
   })
 
@@ -151,7 +168,7 @@
          })
        })
      } else {
-       $(".message_alert").fadeIn(2000).delay(1000).fadeOut(500)
+       $(".message_alert .mal").fadeIn(2000).animate({"transform":"translateY(-3px)"}).delay(1000).fadeOut(500)
          .text("Incorrect Username / Password");
      }
   });
@@ -162,7 +179,9 @@
       $.when($('#profile_phase').fadeOut(500))
       .then(function(){
         $("#note_title").text(note_title)
-        $("#note_area").val(note)
+        // Markdown Note
+        // $("#note_area").html(note)
+        decodeMarkdown(note);
         $("#notes_phase").fadeIn(500)
       })
     } else {
@@ -170,5 +189,21 @@
 
     }
   })
+
+  function decodeMarkdown(note) {
+    note_spaced = note.split(" ")
+    for (i = 0; i < note_spaced.length; i++) {
+      console.log(note_spaced[i])
+      if (note_spaced[i][0] == "*") {
+        note_spaced[i].replace("*","")
+        note_spaced.splice(i,0,"<b>")
+        note_spaced.splice(i+2,0,"</b>")
+        i++;
+      }
+      // Loop is done add to page
+      // decodedNote += note_spaced[i] + " "
+    }
+    $("#note_area").html(note_spaced.join(" "));
+  }
 
 })();

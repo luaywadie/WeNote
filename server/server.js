@@ -10,7 +10,7 @@ app.get('/',function(req,res) {
 
 io.on('connection', function(socket){
   var opened_note_src = ""
-  // Check Username
+  // Check Register
   socket.on('user_register',function(username,password){
     for (i = 0; i < users.length; i++) {
       if (users[i]['username'] == username) {
@@ -69,7 +69,11 @@ io.on('connection', function(socket){
 })
 
 function register_user(username, password) {
-  users.push({"username" : username, "password" : password})
+  users.push({
+    "username" : username,
+    "password" : password,
+    "notes" : []
+  })
   jsonStr = JSON.stringify(users, null, 2);
   fs.writeFile('./users.json', jsonStr, function(err){
     if (err) return console.log(err);
