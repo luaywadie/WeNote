@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <title>WeNote | Home</title>
+    <!-- <link rel="stylesheet" href="style.css"/> -->
+    <link rel="stylesheet" href="res/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Login | Register Phase -->
+    <div id="login_phase" class="app_phase">
+      <form id="login_form">
+        <div class="form_field form_input">
+          <label>Welcome to WeNote!</label>
+          <input id="username_in" name="username" type="text" placeholder="Username"/>
+          <input id="password_in" name="password" type="text" placeholder="Password"/>
+          <span class="message_alert"></span>
+        </div>
+        <div class="form_field">
+          <button id="form_submit" class="form_button"><i class="fas fa-sign-in-alt"></i></button>
+          <button id="to_register" class="form_button"><i class="fas fa-plus-square"></i></button>
+        </div>
+      </form>
+      <form id="register_form">
+        <div class="form_field form_input">
+          <label>Register Below!</label>
+          <input id="username_in" name="username" type="text" placeholder="Choose a Username"/>
+          <input id="password_in" name="password" type="text" placeholder="Choose a Password"/>
+        </div>
+        <div class="form_field">
+          <button id="to_login" class="form_button"><i class="fas fa-arrow-circle-left"></i></button>
+          <button id="register_confirm_submit" class="form_button"><i class="fas fa-check-square"></i></button>
+        </div>
+      </form>
+    </div>
+
+    <div id="profile_phase" class="app_phase" hidden></div>
+
+    <div id="notes_phase" class="app_phase" hidden></div>
+
+    <div class="body_animator">
+      <span class="body_block"></span>
+    </div>
+
+    <!-- Socket IO -->
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="res/js/jquery.js"></script>
+    <script type="text/javascript" src="phase.js"></script>
+  </body>
+</html>
