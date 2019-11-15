@@ -19,5 +19,3 @@
   - Editing a notes file
 
 I would recommend checking the server terminal window to see these in actions.
-
-Soon will be updating notes.
