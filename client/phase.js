@@ -34,6 +34,7 @@
 
   function loadElements() {
     $("#profile_phase").load("user_profile.html")
+    $("#notes_phase").load("note_edit.html")
   }
 
   // Auto Resize
@@ -120,6 +121,11 @@
     // Update Notes
     $("#note_area").on("input propertychange", function(){
       socket.emit("update_note", user, current_note,$(this).html())
+    })
+    // Compile Note
+    $("#compile_note").on("click", function(e){
+      e.preventDefault()
+      
     })
   })
 
