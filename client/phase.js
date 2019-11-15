@@ -180,8 +180,7 @@
       .then(function(){
         $("#note_title").text(note_title)
         // Markdown Note
-        // $("#note_area").html(note)
-        decodeMarkdown(note);
+        $("#note_area").html(note)
         $("#notes_phase").fadeIn(500)
       })
     } else {

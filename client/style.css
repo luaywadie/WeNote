@@ -316,10 +316,21 @@ html {
   }
 
   #notes_phase #note_area {
-    font-size:16px;
-    margin-left:20px;
-    width:75%;
-    height:500px;
+    font-size: 16px;
+    margin-left: 20px;
+    width: 75%;
+    height: 450px;
+    border: 1px solid white;
+    box-shadow: 0 0 2px 1px #fff;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    text-indent: 10px;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+
+  #notes_phase #note_area:focus {
+    outline: none;
   }
 
 
@@ -343,7 +354,7 @@ html {
 }
 
 @keyframes background_color_shift {
-  0% {background-color: #fff}
+  0% {background-color: #4420}
   10% {background-color:#cc593350}
   20% {background-color: #cccc3350}
   30% {background-color: #33cc5950}
@@ -352,8 +363,8 @@ html {
   60% {background-color: #a633cc50}
   70% {background-color: 	#cc335950}
   80% {background-color: #cca63350}
-  90% {background-color: #22250}
-  100% {background-color: #fff}
+  90% {background-color: #cc593350}
+  100% {background-color: #4420}
 }
 
 @keyframes background_shuffle {
