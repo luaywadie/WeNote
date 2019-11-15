@@ -3,6 +3,7 @@
   var socket;
   var phases = ["login","register","profile","notes"];
   var current_phase = 0;
+  var note_phase = ""
   var user = "";
   var current_note;
 
@@ -110,6 +111,8 @@
 
   // Load Note Page
   $("#notes_phase").load("note_edit.html",function(){
+    // Set note phase
+    note_phase = "edit"
     // Switch Window From Note To Profile
     $("#exit_note").on("click", function(e){
       e.preventDefault();
@@ -125,7 +128,21 @@
     // Compile Note
     $("#compile_note").on("click", function(e){
       e.preventDefault()
-      
+      if (note_phase == "edit") {
+        note_phase = "compile"
+        $.when($("#note_area").fadeOut(500), decodeMarkdown($("#note_area").html()))
+        .then(function(){
+          $("#compiled_note_area").fadeIn(500)
+          $("#compile_note").html("<i class='fas fa-edit'></i>")
+        })
+      } else if (note_phase == "compile") {
+        note_phase = "edit"
+        $.when($("#compiled_note_area").fadeOut(500))
+        .then(function(){
+          $("#note_area").fadeIn(500)
+          $("#compile_note").html("<i class='fas fa-scroll'></i>")
+        })
+      }
     })
   })
 
@@ -200,7 +217,7 @@
     for (i = 0; i < note_spaced.length; i++) {
       console.log(note_spaced[i])
       if (note_spaced[i][0] == "*") {
-        note_spaced[i].replace("*","")
+        note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
         note_spaced.splice(i,0,"<b>")
         note_spaced.splice(i+2,0,"</b>")
         i++;
@@ -208,7 +225,7 @@
       // Loop is done add to page
       // decodedNote += note_spaced[i] + " "
     }
-    $("#note_area").html(note_spaced.join(" "));
+    $("#compiled_note_area").html(note_spaced.join(" "));
   }
 
 })();

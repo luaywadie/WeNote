@@ -315,7 +315,7 @@ html {
     background-color:#ed143d80;
   }
 
-  #notes_phase #note_area {
+  #notes_phase .note_decor {
     font-size: 16px;
     margin-left: 20px;
     width: 75%;
@@ -329,7 +329,7 @@ html {
     overflow-y: scroll;
   }
 
-  #notes_phase #note_area:focus {
+  #notes_phase .note_decor:focus {
     outline: none;
   }
 
