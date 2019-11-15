@@ -1,10 +1,10 @@
 # WeNote™
 ## Installing Dependencies
 1) Use git clone or download a zip version of the application.
-- To use git clone, first install git from 
+- To use git clone, first install git from
   - https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 - Extract if ZIP file
-- After extracting / cloning, check if you have NPM or Node JS installed, if not download them from here: 
+- After extracting / cloning, check if you have NPM or Node JS installed, if not download them from here:
   - https://www.npmjs.com/get-npm
 2) Using a terminal, navigate to server and install npm dependencies by typing `npm install`.
 3) Using another terminal window, navigate to client and install npm dependencies by typing `npm install`.
@@ -19,3 +19,5 @@
   - Editing a notes file
 
 I would recommend checking the server terminal window to see these in actions.
+
+Soon will be updating notes.
