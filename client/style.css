@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
+@media print {
+   .no-print { display: none; }
+   #notes_phase .note_decor {
+      font-size: 16px;
+      margin-left: 0px;
+      width: 100%;
+      height: 100%;
+      border: none;
+      box-shadow: none;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      text-indent: 10px;
+      padding: 0px; */
+      overflow-y: hidden;
+  }
+}
+
 body {
   margin: 0;
   animation: background_color_shift 20s infinite ease-in-out;

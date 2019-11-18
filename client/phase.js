@@ -136,6 +136,7 @@
           $("#compile_note").html("<i class='fas fa-edit'></i>")
         })
       } else if (note_phase == "compile") {
+        // print($("#note_area").html())
         note_phase = "edit"
         $.when($("#compiled_note_area").fadeOut(500))
         .then(function(){
@@ -227,6 +228,10 @@
       // Colors
       note = note.replace("_c=red","<span style='color:#E74C3C'>")
       note = note.replace("c_","</span>")
+      note = note.replace("_bk=white","<span style='background-color:#fff'>")
+      note = note.replace("bk_","</span>")
+      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
+      note = note.replace("hl_","</span>")
 
     // note_spaced = note.split(" ")
     // for (i = 0; i < note_spaced.length; i++) {
