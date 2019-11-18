@@ -354,7 +354,7 @@ html {
 }
 
 @keyframes background_color_shift {
-  0% {background-color: #4420}
+  0% {background-color: #cc593350}
   10% {background-color:#cc593350}
   20% {background-color: #cccc3350}
   30% {background-color: #33cc5950}
@@ -363,8 +363,7 @@ html {
   60% {background-color: #a633cc50}
   70% {background-color: 	#cc335950}
   80% {background-color: #cca63350}
-  90% {background-color: #cc593350}
-  100% {background-color: #4420}
+  100% {background-color: #cc593350}
 }
 
 @keyframes background_shuffle {

@@ -213,19 +213,55 @@
   })
 
   function decodeMarkdown(note) {
-    note_spaced = note.split(" ")
-    for (i = 0; i < note_spaced.length; i++) {
-      console.log(note_spaced[i])
-      if (note_spaced[i][0] == "*") {
-        note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
-        note_spaced.splice(i,0,"<b>")
-        note_spaced.splice(i+2,0,"</b>")
-        i++;
-      }
-      // Loop is done add to page
-      // decodedNote += note_spaced[i] + " "
-    }
-    $("#compiled_note_area").html(note_spaced.join(" "));
+
+      note = note.replace("b_","</b>")
+      note = note.replace("_b","<b>")
+      note = note.replace("sup_","</sup>")
+      note = note.replace("_sup","<sup>")
+      note = note.replace("sub_","</sub>")
+      note = note.replace("_sub","<sub>")
+      note = note.replace("del_","</del>")
+      note = note.replace("_del","<del>")
+      note = note.replace("u_","</u>")
+      note = note.replace("_u","<u>")
+      // Colors
+      note = note.replace("_c=red","<span style='color:#E74C3C'>")
+      note = note.replace("c_","</span>")
+
+    // note_spaced = note.split(" ")
+    // for (i = 0; i < note_spaced.length; i++) {
+    //   if (note_spaced[i][0] == "*") {
+    //     note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
+    //     note_spaced.splice(i,0,"<b>")
+    //     note_spaced.splice(i+2,0,"</b>")
+    //     i++;
+    //   }
+    //   if (note_spaced[i][0] == "_") {
+    //     target = 0;
+    //     for (j = 1; j < note_spaced[i].length; j++) {
+    //       if (note_spaced[i][j] == "_") {
+    //         target = j
+    //         break;
+    //       }
+    //     }
+    //     note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
+    //     note_spaced[i] = "<u>".concat(note_spaced[i])
+    //     note_spaced[i] = note_spaced[i].replace("_","</u>")
+    //   }
+    //   if (note_spaced[i][0] == "/") {
+    //     target = 0;
+    //     for (j = 1; j < note_spaced[i].length; j++) {
+    //       if (note_spaced[i][j] == "/") {
+    //         target = j
+    //         break;
+    //       }
+    //     }
+    //     note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
+    //     note_spaced[i] = "<i>".concat(note_spaced[i])
+    //     note_spaced[i] = note_spaced[i].replace("/","</i>")
+    //   }
+    // }
+    $("#compiled_note_area").html(note);
   }
 
 })();
