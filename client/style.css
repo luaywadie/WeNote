@@ -213,7 +213,14 @@ button:focus {
    text-align: center;
    font-size: 18px;
    margin-left: 10px;
+   transition: .5s;
  }
+
+ .app_phase .left_current_notes table .table_actions:hover {
+    box-shadow: 0 0 5px 5px #ffffff94;
+    transition: .5s;
+    transform: translateY(-1px);
+}
 
  .app_phase .left_current_notes table .table_action_edit {
    background-color:#4CAF5080;
@@ -222,6 +229,19 @@ button:focus {
  .app_phase .left_current_notes table .table_action_trash {
    background-color:#ed143d80;
  }
+
+ .app_phase .left_current_notes table .table_action_privacy {
+   background-color:#D71FDD80;
+ }
+
+ .app_phase .left_current_notes table .table_action_privacy.off {
+   opacity: .4;
+ }
+
+ .app_phase .left_current_notes table .table_action_privacy.on {
+   opacity: 1;
+ }
+
 
 
  /* Profile */

@@ -164,7 +164,7 @@
           "<td>" + creator + "</td> " +
           '<td><a href="#" class="table_action_edit table_actions" data-src="' + current_note + '"><i class="fas fa-pencil-alt"></i>' +
           '</a><a href="#" class="table_action_trash table_actions" data-src="' + current_note + '"><i class="fas fa-trash-alt"></i></a>' +
-          '</td>' +
+          '<a href="#" class="table_action_privacy table_actions off" data-src="' + current_note + '"><i class="fas fa-shield-alt"></i></a></td>' +
         "</tr>");
       }
 
@@ -173,6 +173,17 @@
         dataID = $(this).data("src");
         current_note = dataID;
         socket.emit("get_notes",user,dataID);
+      })
+
+      // Edit Click
+      $(".table_action_privacy").on("click", function(e){
+        if ($(this).hasClass("off")) {
+          $(this).removeClass("off")
+          $(this).addClass("on")
+        } else {
+          $(this).removeClass("on")
+          $(this).addClass("off")
+        }
       })
 
   }
@@ -199,7 +210,6 @@
            $.when($("#profile_phase").fadeOut(500))
            .then(function(){
              $("#settings_phase").fadeIn(500);
-
              // Setting option buttons
              $(".setting_option_action").on("click", function(e){
                if ($(this).hasClass("option_false")) {
@@ -213,10 +223,18 @@
              // Leave Settings
              $("#exit_settings").on("click",function(e){
                e.preventDefault();
-               
+               $.when($("#settings_phase").fadeOut(500))
+               .then(function(){
+                 $("#profile_phase").fadeIn(500);
+               })
              })
 
            })
+         })
+
+         $("#create_new_note").on("click", function(e){
+           e.preventDefault();
+           
          })
 
        })
