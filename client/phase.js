@@ -36,6 +36,7 @@
   function loadElements() {
     $("#profile_phase").load("user_profile.html")
     $("#notes_phase").load("note_edit.html")
+    $("#settings_phase").load("settings.html")
   }
 
   // Auto Resize
@@ -190,6 +191,34 @@
          let myNotification = new Notification('WeNote - Login', {
            body: 'Successfully Logged In as ' + username + "."
          })
+         // Profile Phase Buttons
+         // Go To Settings
+         $("#profile_settings").on("click", function(e){
+           e.preventDefault();
+           console.log("clicked!")
+           $.when($("#profile_phase").fadeOut(500))
+           .then(function(){
+             $("#settings_phase").fadeIn(500);
+
+             // Setting option buttons
+             $(".setting_option_action").on("click", function(e){
+               if ($(this).hasClass("option_false")) {
+                 $(this).removeClass("option_false")
+                 $(this).addClass("option_true")
+               } else {
+                 $(this).removeClass("option_true")
+                 $(this).addClass("option_false")
+               }
+             })
+             // Leave Settings
+             $("#exit_settings").on("click",function(e){
+               e.preventDefault();
+               
+             })
+
+           })
+         })
+
        })
      } else {
        $(".message_alert .mal").fadeIn(2000).animate({"transform":"translateY(-3px)"}).delay(1000).fadeOut(500)
@@ -215,6 +244,14 @@
 
   function decodeMarkdown(note) {
 
+      // Colors
+      note = note.replace("_c=red","<span style='color:#E74C3C'>")
+      note = note.replace("c_","</span>")
+      note = note.replace("_bk=white","<span style='background-color:#fff'>")
+      note = note.replace("bk_","</span>")
+      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
+      note = note.replace("hl_","</span>")
+
       note = note.replace("b_","</b>")
       note = note.replace("_b","<b>")
       note = note.replace("sup_","</sup>")
@@ -225,13 +262,6 @@
       note = note.replace("_del","<del>")
       note = note.replace("u_","</u>")
       note = note.replace("_u","<u>")
-      // Colors
-      note = note.replace("_c=red","<span style='color:#E74C3C'>")
-      note = note.replace("c_","</span>")
-      note = note.replace("_bk=white","<span style='background-color:#fff'>")
-      note = note.replace("bk_","</span>")
-      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
-      note = note.replace("hl_","</span>")
 
     // note_spaced = note.split(" ")
     // for (i = 0; i < note_spaced.length; i++) {

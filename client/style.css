@@ -27,6 +27,10 @@ html {
   overflow: hidden;
 }
 
+button:focus {
+  outline: none;
+}
+
 /* Login Form */
 .form_field {
   width: 100%;
@@ -109,11 +113,11 @@ html {
 
 /* Profile */
 
-#profile_phase .top_bar {
+.app_phase .top_bar {
   margin-top:20px;
 }
 
-#profile_phase .top_bar label {
+.app_phase .top_bar label {
   display: block;
   font-size:42px;
   font-weight: 100;
@@ -124,19 +128,19 @@ html {
   background-color:#5551;
 }
 
-#profile_phase .top_bar label span {
+.app_phase .top_bar label span {
   font-weight:900;
   font-style: oblique;
 }
 
-#profile_phase .right_btns {
+.app_phase .right_btns {
   position: absolute;
   right: 20px;
   display: flex;
   flex-flow: column;
 }
 
-#profile_phase .right_btns a {
+.app_phase .right_btns a {
   background-color: #fff5;
   padding: 25px;
   margin-top:50px;
@@ -149,7 +153,7 @@ html {
   transition: .5s;
 }
 
-#profile_phase .right_btns a:hover {
+.app_phase .right_btns a:hover {
   background-color: #fff9;
   padding: 25px;
   margin-top:50px;
@@ -161,11 +165,11 @@ html {
   transform: translateY(-3px);
 }
 
-#profile_phase .left_current_notes {
+.app_phase .left_current_notes {
   margin-top:50px;
 }
 
-#profile_phase .left_current_notes table {
+.app_phase .left_current_notes table {
   width:80%;
   text-align: center;
   font-size:18px;
@@ -173,7 +177,7 @@ html {
   border-spacing: 0;
 }
 
-#profile_phase .left_current_notes table th {
+.app_phase .left_current_notes table th {
   border: 1px solid #3335;
   border-bottom-color: #333;
   border-top:0;
@@ -183,24 +187,24 @@ html {
   letter-spacing: 1px;
 }
 
-#profile_phase .left_current_notes table th:first-child {
+.app_phase .left_current_notes table th:first-child {
   border-left:0;
 }
 
-#profile_phase .left_current_notes table th:last-child {
+.app_phase .left_current_notes table th:last-child {
   border-right:0;
 }
 
-#profile_phase .left_current_notes table td {
+.app_phase .left_current_notes table td {
   margin:0;
   height: 70px;
 }
 
-#profile_phase .left_current_notes table tr:nth-child(even) {
+.app_phase .left_current_notes table tr:nth-child(even) {
   background-color:#3331;
 }
 
- #profile_phase .left_current_notes table .table_actions {
+ .app_phase .left_current_notes table .table_actions {
    color: #fff;
    display: inline-table;
    border-radius: 10px;
@@ -211,11 +215,11 @@ html {
    margin-left: 10px;
  }
 
- #profile_phase .left_current_notes table .table_action_edit {
+ .app_phase .left_current_notes table .table_action_edit {
    background-color:#4CAF5080;
  }
 
- #profile_phase .left_current_notes table .table_action_trash {
+ .app_phase .left_current_notes table .table_action_trash {
    background-color:#ed143d80;
  }
 
@@ -350,7 +354,68 @@ html {
     outline: none;
   }
 
+/* Settings Phase */
 
+#settings_phase .right_btns a {
+  background-color: #fff5;
+  padding: 25px 30px !important;
+  margin-top:50px;
+  border-radius: 50px;
+  font-size:36px;
+  color: #444;
+  text-shadow: 2px 2px #2225;
+  box-shadow: 0px 4px 5px 0 #3333;
+  text-align: center;
+  transition: .5s;
+}
+
+#settings_phase .right_btns a:hover {
+  background-color: #fff9;
+  padding: 25px 30px !important;
+  margin-top:50px;
+  border-radius: 50px;
+  color: #333;
+  text-shadow: 2px 2px #5555;
+  box-shadow: 0px 8px 8px 0 #3333;
+  text-align: center;
+  transform: translateY(-3px);
+}
+
+#settings_phase .left_area {
+  margin-left:20px;
+
+}
+
+#settings_phase .left_area button {
+  border: 0;
+  padding: 18px 18px;
+  border-radius: 20px;
+  margin-left: 20px;
+  float: right;
+}
+
+#settings_phase .setting_option {
+    display: table;
+    padding: 10px 15px;
+    background-color: #0000000f;
+    border-radius: 50px;
+    width: 280px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#settings_phase label.setting_option_name {
+    position: relative;
+    top: 6px;
+}
+
+#settings_phase .option_false {
+    background-color: #f7583f;
+}
+
+#settings_phase .option_true {
+    background-color: #50DE5A;
+}
 
 /* Body Animator */
 
