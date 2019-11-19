@@ -231,10 +231,12 @@
 
            })
          })
-
+         // Create new Note
          $("#create_new_note").on("click", function(e){
-           e.preventDefault();
-           
+            e.preventDefault();
+            title = $("#note_title").val()
+            socket.emit("new_note",user,title);
+            $("note_title").val("")
          })
 
        })
@@ -257,6 +259,13 @@
     } else {
       // Notes Response Error
 
+    }
+  })
+
+  // Socket Create Notes
+  socket.on("create_note_repsonse",function(response,notes){
+    if (response == "ok") {
+      fetchNotes(notes);
     }
   })
 

@@ -374,6 +374,12 @@ button:focus {
     outline: none;
   }
 
+  #profile_phase input#note_title {
+      position: absolute;
+      right: 0px;
+      font-size: 16px;
+  }
+
 /* Settings Phase */
 
 #settings_phase .right_btns a {
