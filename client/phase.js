@@ -179,8 +179,13 @@
       // Edit Click
       $(".table_action_edit").on("click", function(e){
         dataID = $(this).data("src");
-        current_note = dataID;
+        current_note = dataID
         socket.emit("get_notes",user,dataID);
+      })
+
+      $(".table_action_trash").on("click", function(e){
+        // dataID = $(this).data("src")
+        socket.emit("del_note",user,current_note)
       })
 
       // Edit Click
@@ -278,15 +283,7 @@
   })
 
   function decodeMarkdown(note) {
-
-      // Colors
-      note = note.replace("_c=red","<span style='color:#E74C3C'>")
-      note = note.replace("c_","</span>")
-      note = note.replace("_bk=white","<span style='background-color:#fff'>")
-      note = note.replace("bk_","</span>")
-      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
-      note = note.replace("hl_","</span>")
-
+    for (i = 0; i < 20; i++) {
       note = note.replace("b_","</b>")
       note = note.replace("_b","<b>")
       note = note.replace("sup_","</sup>")
@@ -297,6 +294,15 @@
       note = note.replace("_del","<del>")
       note = note.replace("u_","</u>")
       note = note.replace("_u","<u>")
+
+      // Colors
+      note = note.replace("_c=red","<span style='color:#E74C3C'>")
+      note = note.replace("c_","</span>")
+      note = note.replace("_bk=white","<span style='background-color:#fff'>")
+      note = note.replace("bk_","</span>")
+      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
+      note = note.replace("hl_","</span>")
+    }
 
     // note_spaced = note.split(" ")
     // for (i = 0; i < note_spaced.length; i++) {

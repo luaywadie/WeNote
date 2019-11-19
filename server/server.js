@@ -60,6 +60,15 @@ io.on('connection', function(socket){
       }
     }
   })
+  // Notes (Delete)
+  // socket.on('del_note', function(username, noteSrc){
+  //   for (i = 0; i < notes.length;i++) {
+  //     if (notes[i]['username'] == username) {
+  //       fs.unlink("./notes/" + noteSrc)
+  //       break
+  //     }
+  //   }
+  // })
   // Notes (Update)
   socket.on('update_note', function(username, noteSrc, note){
     fs.writeFile("./notes/" + noteSrc,note,function(error){
@@ -111,6 +120,10 @@ function create_note(username,title,socket) {
       break
     }
   }
+}
+
+function delete_note(username,title,socket) {
+
 }
 
 http.listen(3000, function(){
