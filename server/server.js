@@ -38,7 +38,7 @@ io.on('connection', function(socket){
   });
   // Notes (CREATE)
   socket.on('new_note',function(username,title) {
-    create_note(username,title);
+    create_note(username,title,socket);
   })
   // Notes (GET)
   socket.on('get_notes',function(username,noteID) {
@@ -84,7 +84,7 @@ function register_user(username, password) {
   })
 }
 
-function create_note(username,title) {
+function create_note(username,title,socket) {
   for (i = 0; i < users.length; i++) {
     if (users[i]["username"] == username) {
       for (j = 0; j < users[i]["notes"].length;j++) {

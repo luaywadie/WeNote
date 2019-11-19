@@ -150,6 +150,14 @@
 
   // Fetch Notes Function
   function fetchNotes(notes) {
+      $("#profile_phase .left_current_notes table").html(
+        "<tr>" +
+          "<th>Date</th>" +
+          "<th>Subject</th>" +
+          "<th>Created By</th>" +
+          "<th>Action</th>" +
+        "</tr>"
+      )
       for (i = 0; i < notes.length; i++) {
         date = notes[i]['date']
         title = notes[i]['title']
