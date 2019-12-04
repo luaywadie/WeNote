@@ -88,7 +88,7 @@ function create_note(username,title,socket) {
   for (i = 0; i < users.length; i++) {
     if (users[i]["username"] == username) {
       for (j = 0; j < users[i]["notes"].length;j++) {
-        if (users[i]["notes"][j] == title) {
+        if (users[i]["notes"][j]['title'] == title) {
           break
         } else if (j == users[i]["notes"].length - 1) {
           users[i]["notes"].push({
