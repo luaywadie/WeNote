@@ -96,25 +96,43 @@ function register_user(username, password) {
 function create_note(username,title,socket) {
   for (i = 0; i < users.length; i++) {
     if (users[i]["username"] == username) {
-      for (j = 0; j < users[i]["notes"].length;j++) {
-        if (users[i]["notes"][j]['title'] == title) {
-          break
-        } else if (j == users[i]["notes"].length - 1) {
-          users[i]["notes"].push({
-            "title": title,
-            "date": "11/7/2019",
-            "creator": "self",
-            "src": "Luay#" + title + ".txt"
-          })
-          jsonStr = JSON.stringify(users, null, 2);
-          fs.writeFile('./users.json', jsonStr, function(err){
-            if (err) return console.log(err);
-          })
-          fs.writeFile('notes/Luay#' + title +'.txt', "Welcome to your new note!", function(err){
-            if (err) return console.log(err);
-          })
-          socket.emit('create_note_repsonse','ok',users[i]["notes"]);
-          break
+      if (users[i]["notes"].length == 0) {
+        users[i]["notes"].push({
+          "title": title,
+          "date": "11/7/2019",
+          "creator": "self",
+          "src": "Luay#" + title + ".txt"
+        })
+        jsonStr = JSON.stringify(users, null, 2);
+        fs.writeFile('./users.json', jsonStr, function(err){
+          if (err) return console.log(err);
+        })
+        fs.writeFile('notes/Luay#' + title +'.txt', "Welcome to your new note!", function(err){
+          if (err) return console.log(err);
+        })
+        socket.emit('create_note_repsonse','ok',users[i]["notes"]);
+        break
+      } else {
+        for (j = 0; j < users[i]["notes"].length;j++) {
+          if (users[i]["notes"][j]['title'] == title) {
+            break
+          } else if (j == users[i]["notes"].length - 1) {
+            users[i]["notes"].push({
+              "title": title,
+              "date": "11/7/2019",
+              "creator": "self",
+              "src": "Luay#" + title + ".txt"
+            })
+            jsonStr = JSON.stringify(users, null, 2);
+            fs.writeFile('./users.json', jsonStr, function(err){
+              if (err) return console.log(err);
+            })
+            fs.writeFile('notes/Luay#' + title +'.txt', "Welcome to your new note!", function(err){
+              if (err) return console.log(err);
+            })
+            socket.emit('create_note_repsonse','ok',users[i]["notes"]);
+            break
+          }
         }
       }
       break

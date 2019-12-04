@@ -4,53 +4,16 @@
     "password": "123",
     "notes": [
       {
-        "title": "Test",
-        "date": "10/4/2019",
+        "title": "Math101",
+        "date": "11/7/2019",
         "creator": "self",
-        "src": "Luay#Test.txt"
+        "src": "Luay#Math101.txt"
       },
       {
-<<<<<<< HEAD
-        "title": "Hello World",
+        "title": "Physics",
         "date": "11/7/2019",
         "creator": "self",
-        "src": "Luay#Hello World.txt"
-      },
-      {
-        "title": "Hello World",
-        "date": "11/7/2019",
-        "creator": "self",
-        "src": "Luay#Hello World.txt"
-      },
-      {
-        "title": "Hello World",
-        "date": "11/7/2019",
-        "creator": "self",
-        "src": "Luay#Hello World.txt"
-      },
-      {
-        "title": "Hello Worl",
-        "date": "11/7/2019",
-        "creator": "self",
-        "src": "Luay#Hello Worl.txt"
-=======
-        "title": "Math 101",
-        "date": "11/7/2019",
-        "creator": "self",
-        "src": "Luay#Math 101.txt"
-      },
-      {
-        "title": "Physics 102",
-        "date": "11/7/2019",
-        "creator": "self",
-        "src": "Luay#Physics 102.txt"
-      },
-      {
-        "title": "Science",
-        "date": "11/7/2019",
-        "creator": "self",
-        "src": "Luay#Science.txt"
->>>>>>> 6801ab06f1fa850dc9534fef24577bebea562a42
+        "src": "Luay#Physics.txt"
       }
     ]
   }
