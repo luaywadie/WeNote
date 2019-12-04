@@ -10,6 +10,7 @@
         "src": "Luay#Test.txt"
       },
       {
+<<<<<<< HEAD
         "title": "Hello World",
         "date": "11/7/2019",
         "creator": "self",
@@ -32,6 +33,24 @@
         "date": "11/7/2019",
         "creator": "self",
         "src": "Luay#Hello Worl.txt"
+=======
+        "title": "Math 101",
+        "date": "11/7/2019",
+        "creator": "self",
+        "src": "Luay#Math 101.txt"
+      },
+      {
+        "title": "Physics 102",
+        "date": "11/7/2019",
+        "creator": "self",
+        "src": "Luay#Physics 102.txt"
+      },
+      {
+        "title": "Science",
+        "date": "11/7/2019",
+        "creator": "self",
+        "src": "Luay#Science.txt"
+>>>>>>> 6801ab06f1fa850dc9534fef24577bebea562a42
       }
     ]
   }
