@@ -380,6 +380,22 @@ button:focus {
       font-size: 16px;
   }
 
+  #notes_phase .note_decor table {
+    border-collapse: collapse;
+  }
+
+  #notes_phase .note_decor th {
+    border: 1px solid black;
+    text-indent: 0px;
+    padding: 5px;
+  }
+
+  #notes_phase .note_decor td {
+    border: 1px solid black;
+    text-indent: 0px;
+    padding: 5px;
+  }
+
 /* Settings Phase */
 
 #settings_phase .right_btns a {

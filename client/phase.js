@@ -284,6 +284,23 @@
 
   function decodeMarkdown(note) {
     for (i = 0; i < 20; i++) {
+      // Colors
+      note = note.replace("_c=red","<span style='color:#E74C3C'>")
+      note = note.replace("c_","</span>")
+      note = note.replace("_bk=white","<span style='background-color:#fff'>")
+      note = note.replace("bk_","</span>")
+      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
+      note = note.replace("hl_","</span>")
+      note = note.replace("_table","<table>")
+      note = note.replace("table_","</table>")
+      note = note.replace("_row","<tr>")
+      note = note.replace("row_","</tr>")
+      note = note.replace("_header","<th>")
+      note = note.replace("header_","</th>")
+      note = note.replace("_val","<td>")
+      note = note.replace("val_","</td>")
+
+
       note = note.replace("b_","</b>")
       note = note.replace("_b","<b>")
       note = note.replace("sup_","</sup>")
@@ -294,49 +311,7 @@
       note = note.replace("_del","<del>")
       note = note.replace("u_","</u>")
       note = note.replace("_u","<u>")
-
-      // Colors
-      note = note.replace("_c=red","<span style='color:#E74C3C'>")
-      note = note.replace("c_","</span>")
-      note = note.replace("_bk=white","<span style='background-color:#fff'>")
-      note = note.replace("bk_","</span>")
-      note = note.replace("_hl=yellow","<span style='background-color:#e0ed1cb0'>")
-      note = note.replace("hl_","</span>")
     }
-
-    // note_spaced = note.split(" ")
-    // for (i = 0; i < note_spaced.length; i++) {
-    //   if (note_spaced[i][0] == "*") {
-    //     note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
-    //     note_spaced.splice(i,0,"<b>")
-    //     note_spaced.splice(i+2,0,"</b>")
-    //     i++;
-    //   }
-    //   if (note_spaced[i][0] == "_") {
-    //     target = 0;
-    //     for (j = 1; j < note_spaced[i].length; j++) {
-    //       if (note_spaced[i][j] == "_") {
-    //         target = j
-    //         break;
-    //       }
-    //     }
-    //     note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
-    //     note_spaced[i] = "<u>".concat(note_spaced[i])
-    //     note_spaced[i] = note_spaced[i].replace("_","</u>")
-    //   }
-    //   if (note_spaced[i][0] == "/") {
-    //     target = 0;
-    //     for (j = 1; j < note_spaced[i].length; j++) {
-    //       if (note_spaced[i][j] == "/") {
-    //         target = j
-    //         break;
-    //       }
-    //     }
-    //     note_spaced[i] = note_spaced[i].slice(1,note_spaced[i].length)
-    //     note_spaced[i] = "<i>".concat(note_spaced[i])
-    //     note_spaced[i] = note_spaced[i].replace("/","</i>")
-    //   }
-    // }
     $("#compiled_note_area").html(note);
   }
 
